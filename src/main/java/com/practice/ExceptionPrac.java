@@ -6,7 +6,7 @@ public class ExceptionPrac {
         try {
             c = a / b;
             System.out.println(c);
-        }catch (ArithmeticException ae){
+        }catch (ArithmeticExcepion ae){
             ae.printStackTrace();
 //            System.out.println(ae);
 //            System.out.println(ae.getMessage());
