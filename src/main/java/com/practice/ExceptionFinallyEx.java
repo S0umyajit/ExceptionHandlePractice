@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class ExceptionFinallyEx {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         FileInputStream fis=null;
         try{
             fis=new FileInputStream("d:/abc.txt");
@@ -14,7 +14,11 @@ public class ExceptionFinallyEx {
         }
         finally {
             if(fis!=null){
-                fis.close();
+                try {
+                    fis.close();
+                }catch (IOException e){
+                    System.out.println(e.getMessage());
+                }
             }
             System.out.println("connection closed");
         }
