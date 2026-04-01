@@ -13,11 +13,15 @@ public class Voting {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter your age: ");
         int age=sc.nextInt();
-        if(age<18){
-            throw new YoungAgeException("You are too young to vote");
+        try {
+            if (age < 18) {
+                throw new YoungAgeException("You are too young to vote");
+            } else {
+                System.out.println("You can vote");
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
-        else {
-            System.out.println("You can vote");
-        }
+        System.out.println("End of System");
     }
 }
