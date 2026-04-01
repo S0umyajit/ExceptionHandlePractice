@@ -2,6 +2,7 @@ package com.practice.customException;
 
 import java.util.Scanner;
 //creating custom exception
+//throw keyword mainly used for custom exception or user defined Exception
 class YoungAgeException extends RuntimeException{
     YoungAgeException(String msg){
         super(msg);
