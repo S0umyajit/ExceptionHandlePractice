@@ -7,6 +7,11 @@ class UnderAgeException extends Exception{
     UnderAgeException(){
         super("You are under Age");
     }
+    //This is how user can provide his own message.
+    //super keyword is to provide details to defualt exception handler
+    UnderAgeException(String msg){
+        super(msg);
+    }
 
 }
 
@@ -19,9 +24,9 @@ public class MyException {
         int age=sc.nextInt();
         try{
         if(age<18) {
-            throw new UnderAgeException();
+            throw new UnderAgeException("You can vote cause your age is: "+age +", you have to be 18 to vote. Now fuck off");
         }
-        }catch (Exception e){
+        }catch (UnderAgeException e){
             e.printStackTrace();
         }
         System.out.println("This is the end");
